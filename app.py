@@ -72,7 +72,7 @@ if st.button("Generate"):
             payload = {"prompt": prompt, "aspect_ratio": aspect}
             
             # This uses the Luma Dream Machine model
-            response = requests.post("https://queue.fast-api.ai/fal-ai/luma-dream-machine", json=payload, headers=headers)
+            requests.post("https://queue.fast-api.ai/fal-ai/luma-dream-machine", json=payload, headers=headers)
             
             if response.status_code == 200:
                 video_url = response.json().get("video", {}).get("url")
